@@ -1,0 +1,33 @@
+version: "3.9"
+
+x-mapserver-image: &mapserver-image pdok/mapserver:7.6.4-patch5-3-buster-lighttpd
+x-mapproxy-image: &mapproxy-image pdok/mapproxy:1.13.2-patched-2
+
+services:
+
+  mapserver:
+    image: *mapserver-image
+    container_name: "mapserver"
+    # ports:
+    #   - 80:80
+    restart: unless-stopped
+    environment:
+        MS_MAPFILE: /srv/config/administrative-boundaries.map
+    volumes:
+      - ./config/mapserver:/srv/config
+      - ./data:/srv/data
+    networks:
+      nsdi:
+
+  mapproxy:
+    image: *mapproxy-image
+    container_name: "mapproxy"
+    ports:
+      - 80:80
+    volumes:
+      - ./config/mapproxy:/srv/mapproxy/config
+    networks:
+      nsdi:
+
+networks:
+  nsdi:      

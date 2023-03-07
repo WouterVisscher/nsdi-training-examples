@@ -16,4 +16,10 @@ http://localhost/?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&BBOX=13.7040000000000
 
 ## mapproxy
 
+```docker
+docker-compose -f docker-compose-mapserver-mapproxy.yaml
+```
+
+http://localhost/demo/?wmts_layer=administrative-boundaries&format=png&srs=EPSG%3A3857
+
 ## minio
