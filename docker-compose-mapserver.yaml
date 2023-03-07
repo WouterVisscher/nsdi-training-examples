@@ -1,0 +1,19 @@
+version: "3.9"
+
+x-mapserver-image: &mapserver-image pdok/mapserver:7.6.4-patch5-3-buster-lighttpd
+
+services:
+
+  mapserver:
+    image: *mapserver-image
+    container_name: "mapserver"
+    ports:
+      - 80:80    
+    restart: unless-stopped
+    environment:
+        MS_MAPFILE: /srv/config/administrative-boundaries.map
+    labels:
+      lc.govt.application.group: "mapserver"
+    volumes:
+      - ./config:/srv/config
+      - ./data:/srv/data

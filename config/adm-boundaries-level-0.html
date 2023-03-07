@@ -1,0 +1,189 @@
+<!-- MapServer Template -->
+<html>
+
+<head>
+    <title>GetFeatureInfo output</title>
+</head>
+<style type="text/css">
+    table.featureInfo,
+    table.featureInfo td,
+    table.featureInfo th {
+        border: 1px solid #ddd;
+        border-collapse: collapse;
+        margin: 0;
+        padding: 0;
+        font-size: 90%;
+        padding: .2em .1em;
+    }
+    table.featureInfo th {
+        padding: .2em .2em;
+        font-weight: bold;
+        background: #eee;
+    }
+    table.featureInfo td {
+        background: #fff;
+    }
+    table.featureInfo tr.odd td {
+        background: #eee;
+    }
+    table.featureInfo caption {
+        text-align: left;
+        font-size: 100%;
+        font-weight: bold;
+        padding: .2em .2em;
+    }
+</style>
+<body>
+    <table class="featureInfo">
+        <caption class="featureInfo">level 0</caption>
+        <tr>
+            <th>ogc_fid</th>
+            <th>gadmid</th>
+            <th>iso</th>
+            <th>name_engli</th>
+            <th>name_iso</th>
+            <th>name_fao</th>
+            <th>name_local</th>
+            <th>name_obsol</th>
+            <th>name_varia</th>
+            <th>name_nonla</th>
+            <th>name_frenc</th>
+            <th>name_spani</th>
+            <th>name_russi</th>
+            <th>name_arabi</th>
+            <th>name_chine</th>
+            <th>waspartof</th>
+            <th>contains</th>
+            <th>sovereign</th>
+            <th>iso2</th>
+            <th>www</th>
+            <th>fips</th>
+            <th>ison</th>
+            <th>validfr</th>
+            <th>validto</th>
+            <th>andyid</th>
+            <th>pop2000</th>
+            <th>sqkm</th>
+            <th>popsqkm</th>
+            <th>unregion1</th>
+            <th>unregion2</th>
+            <th>developing</th>
+            <th>cis</th>
+            <th>transition</th>
+            <th>oecd</th>
+            <th>wbregion</th>
+            <th>wbincome</th>
+            <th>wbdebt</th>
+            <th>wbother</th>
+            <th>ceeac</th>
+            <th>cemac</th>
+            <th>ceplg</th>
+            <th>comesa</th>
+            <th>eac</th>
+            <th>ecowas</th>
+            <th>igad</th>
+            <th>ioc</th>
+            <th>mru</th>
+            <th>sacu</th>
+            <th>uemoa</th>
+            <th>uma</th>
+            <th>palop</th>
+            <th>parta</th>
+            <th>cacm</th>
+            <th>eurasec</th>
+            <th>agadir</th>
+            <th>saarc</th>
+            <th>asean</th>
+            <th>nafta</th>
+            <th>gcc</th>
+            <th>csn</th>
+            <th>caricom</th>
+            <th>eu</th>
+            <th>can</th>
+            <th>acp</th>
+            <th>landlocked</th>
+            <th>aosis</th>
+            <th>sids</th>
+            <th>islands</th>
+            <th>ldc</th>
+            <th>shape_leng</th>
+            <th>shape_area</th>
+        </tr>
+        <tr>
+            <td>[ogc_fid]</td>
+            <td>[gadmid]</td>
+            <td>[iso]</td>
+            <td>[name_engli]</td>
+            <td>[name_iso]</td>
+            <td>[name_fao]</td>
+            <td>[name_local]</td>
+            <td>[name_obsol]</td>
+            <td>[name_varia]</td>
+            <td>[name_nonla]</td>
+            <td>[name_frenc]</td>
+            <td>[name_spani]</td>
+            <td>[name_russi]</td>
+            <td>[name_arabi]</td>
+            <td>[name_chine]</td>
+            <td>[waspartof]</td>
+            <td>[contains]</td>
+            <td>[sovereign]</td>
+            <td>[iso2]</td>
+            <td>[www]</td>
+            <td>[fips]</td>
+            <td>[ison]</td>
+            <td>[validfr]</td>
+            <td>[validto]</td>
+            <td>[andyid]</td>
+            <td>[pop2000]</td>
+            <td>[sqkm]</td>
+            <td>[popsqkm]</td>
+            <td>[unregion1]</td>
+            <td>[unregion2]</td>
+            <td>[developing]</td>
+            <td>[cis]</td>
+            <td>[transition]</td>
+            <td>[oecd]</td>
+            <td>[wbregion]</td>
+            <td>[wbincome]</td>
+            <td>[wbdebt]</td>
+            <td>[wbother]</td>
+            <td>[ceeac]</td>
+            <td>[cemac]</td>
+            <td>[ceplg]</td>
+            <td>[comesa]</td>
+            <td>[eac]</td>
+            <td>[ecowas]</td>
+            <td>[igad]</td>
+            <td>[ioc]</td>
+            <td>[mru]</td>
+            <td>[sacu]</td>
+            <td>[uemoa]</td>
+            <td>[uma]</td>
+            <td>[palop]</td>
+            <td>[parta]</td>
+            <td>[cacm]</td>
+            <td>[eurasec]</td>
+            <td>[agadir]</td>
+            <td>[saarc]</td>
+            <td>[asean]</td>
+            <td>[nafta]</td>
+            <td>[gcc]</td>
+            <td>[csn]</td>
+            <td>[caricom]</td>
+            <td>[eu]</td>
+            <td>[can]</td>
+            <td>[acp]</td>
+            <td>[landlocked]</td>
+            <td>[aosis]</td>
+            <td>[sids]</td>
+            <td>[islands]</td>
+            <td>[ldc]</td>
+            <td>[shape_leng]</td>
+            <td>[shape_area]</td>
+        </tr>
+    </table>    
+    <br />
+</body>
+
+</html>
