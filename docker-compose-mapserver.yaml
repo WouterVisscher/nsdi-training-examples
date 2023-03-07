@@ -12,8 +12,6 @@ services:
     restart: unless-stopped
     environment:
         MS_MAPFILE: /srv/config/administrative-boundaries.map
-    labels:
-      lc.govt.application.group: "mapserver"
     volumes:
-      - ./config:/srv/config
+      - ./config/mapserver:/srv/config
       - ./data:/srv/data
