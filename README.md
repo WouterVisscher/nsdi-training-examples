@@ -1,5 +1,13 @@
 # nsdi-training-examples
 
+## images
+
+```sh
+docker pull pdok/mapserver:7.6.4-patch5-3-buster-lighttpd
+docker pull pdok/mapproxy:1.13.2-patched-2
+docker pull minio/minio
+```
+
 ## mapserver
 
 ```docker
