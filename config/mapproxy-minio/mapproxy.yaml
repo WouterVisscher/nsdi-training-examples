@@ -1,0 +1,56 @@
+# -------------------------------
+# MapProxy configuration.
+#
+# OSM example based on https://wiki.openstreetmap.org/wiki/MapProxy
+# -------------------------------
+---
+services:
+  demo:
+  wmts:
+    kvp: true
+    restful: true
+
+layers:
+  - name: administrative-boundaries
+    title: Administrative Boundaries Tiles
+    sources: [adm_cache]
+
+caches:
+  adm_cache:
+    sources: [administrative-boundaries]
+    grids: [GLOBAL_WEBMERCATOR]
+    format: image/png
+    cache:
+      type: s3
+      bucket_name: administrative-boundaries
+    # cache:
+    #   type: geopackage
+    #   filename: /srv/mapproxy/cache_data/administrative-boundaries.gpkg
+    #   table_name: boundries_level_0
+
+sources:
+  administrative-boundaries:
+    type: wms
+    req:
+      url: http://mapserver?
+      layers: boundries_level_0
+    coverage:
+      bbox: [707000, 1516000, 730000, 1561000]
+      srs: 'EPSG:32620'
+
+grids:
+  webmercator:
+    base: GLOBAL_WEBMERCATOR
+
+globals:
+  cache:
+    base_dir: '/srv/mapproxy/cache_data'
+    lock_dir: '/srv/mapproxy/cache_data/locks'
+    tile_lock_dir: '/srv/mapproxy/cache_data/tile_locks'
+    s3:
+      region_name: us-east-1
+      endpoint_url: http://minio:9000
+
+  image:
+    resampling_method: bilinear
+    jpeg_quality: 90

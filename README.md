@@ -23,3 +23,7 @@ docker-compose -f docker-compose-mapserver-mapproxy.yaml
 http://localhost/demo/?wmts_layer=administrative-boundaries&format=png&srs=EPSG%3A3857
 
 ## minio
+
+```docker
+docker-compose -f docker-compose-mapserver-mapproxy-minio.yaml
+```
