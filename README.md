@@ -25,7 +25,7 @@ docker-compose -f docker-compose-mapserver.yaml up -d
 ## mapproxy
 
 ```docker
-docker-compose -f docker-compose-mapserver-mapproxy.yaml
+docker-compose -f docker-compose-mapserver-mapproxy.yaml up -d
 ```
 
 <http://localhost/demo/?wmts_layer=administrative-boundaries&format=png&srs=EPSG%3A3857>
@@ -33,5 +33,5 @@ docker-compose -f docker-compose-mapserver-mapproxy.yaml
 ## minio
 
 ```docker
-docker-compose -f docker-compose-mapserver-mapproxy-minio.yaml
+docker-compose -f docker-compose-mapserver-mapproxy-minio.yaml up -d
 ```
